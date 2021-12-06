@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http : HttpClient, private renderer : Renderer2) { }
+
+  ngAfterViewInit(): void {
+    this.renderer.removeClass(document.body, "sidebar-open");
+    this.renderer.addClass(document.body, "sidebar-closed");
+  }
 
   ngOnInit(): void {
   }

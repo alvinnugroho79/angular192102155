@@ -35,8 +35,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item menu-open {{ moduleName == 'dashboard' ? 'menu-open' : '' }} {{ moduleName == 'dashboard2' ? 'menu-open' : '' }} {{ moduleName == 'dashboard3' ? 'menu-open' : '' }}">
+            <a href="#" class="nav-link {{ moduleName == 'dashboard' ? 'active' : '' }} {{ moduleName == 'dashboard2' ? 'active' : '' }} {{ moduleName == 'dashboard3' ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -57,18 +57,20 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a [routerLink]="['/dashboard3']" routerLinkActive="router-link-active" class="nav-link {{ moduleName == 'dashboard3' ? 'active' : ''}}">
+                <a href="/dashboard3" class="nav-link {{ moduleName == 'dashboard3' ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v3</p>
                 </a>
               </li>
+              <li class="nav-item">
+              </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a [routerLink]="['/mahasiswa']" routerLinkActive="router-link-active" class="nav-link {{  moduleName == 'mahasiswa' ? 'active' : '' }}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Widgets
+                Mahasiswa
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>

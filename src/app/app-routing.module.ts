@@ -5,14 +5,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import { Dashboard3Component } from './dashboard3/dashboard3.component';
 import { LoginComponent } from './login/login.component';
+import { MahasiswaComponent } from './mahasiswa/mahasiswa.component';
+import { OtentikasiGuard } from './otentikasi.guard';
 
 
 const routes: Routes = [
   { path: "admin", component: AdminComponent },
   { path: "login", component: LoginComponent },
-  { path: "dashboard", component: DashboardComponent},
-  { path: "dashboard2", component: Dashboard2Component},
+  { path: "dashboard", component: DashboardComponent, canActivate : [OtentikasiGuard] },
+  { path: "dashboard2", component: Dashboard2Component, canActivate : [OtentikasiGuard] },
   { path: "dashboard3", component: Dashboard3Component},
+  { path: "mahasiswa", component : MahasiswaComponent, canActivate : [OtentikasiGuard] },
   { path: "", redirectTo: "login", pathMatch: "full" }
 ];
 
