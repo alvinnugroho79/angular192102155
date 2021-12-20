@@ -76,6 +76,22 @@
             </a>
           </li>
           <li class="nav-item">
+            <a [routerLink]="['/forex']" routerLinkActive="router-link-active" class="nav-link {{ moduleName == 'forex' ? 'active' : '' }}">
+              <i class="nav-icon far fa-money-bill-alt"></i>
+              <p>
+                Forex
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/cuaca']" routerLinkActive="router-link-active" class="nav-link {{ moduleName == 'cuaca' ? 'active' : '' }}">
+              <i class="nav-icon fas fa-cloud-rain"></i>
+              <p>
+                Cuaca
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
